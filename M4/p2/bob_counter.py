@@ -15,7 +15,7 @@ def main():
     # remove pass and start your code here
     index = find_bob(string, 0)
     count = 0
-    while index > 0:
+    while index >= 0:
         count += 1
         index = find_bob(string, index+1)
     print(count)
