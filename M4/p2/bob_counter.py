@@ -16,7 +16,6 @@ def main():
     index = find_bob(string, 0)
     count = 0
     while index > 0:
-        print(index)
         count += 1
         index = find_bob(string, index+1)
     print(count)
