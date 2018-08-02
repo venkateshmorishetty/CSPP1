@@ -6,6 +6,7 @@ For example, if s = 'azcbobobegghakl', then your program should print
 Number of times bob occurs is: 2'''
 
 def find_bob(string, index):
+    ''' Returns the index of the occurane of the bob in the string after index'''
     return string.find("bob", index)
 
 def main():
