@@ -15,23 +15,23 @@ If you've spent more than a few hours on this problem, we suggest that you move 
 If you have time, come back to this problem after you've had a break and cleared your head.'''
 
 def main():
-	s = input()
-	i=0
-	temp=0
-	length=len(s)
-	string1=[]
-	string2=[]
-	while i<length-2:
-		if s[i]<s[i+1]:
-			string1.append(s[i])
-			temp=temp+1
-		else :
-			if len(string1)>len(string2):
-			 string2.append(string1)
-			 string1=''	
-		i=i+1		 
-	print(string2)		 
+    s = input()
+    length=len(s)
+    string2=''
+    for i in range(length):
+        string1=''
+        temp=s[i]
+        for j in range(i,len(s)):
+            if temp<=s[j]:
+                temp=s[j]
+                string1+=temp
+            else:
+                break
+            if len(string1)>len(string2):
+                    string2=string1
+                           
+    print(string2)       
 
-	pass
+    pass
 if __name__== "__main__":
-	main()
+    main()
