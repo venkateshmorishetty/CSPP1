@@ -28,12 +28,12 @@ def payingdebtoffinayear(balance, annualinterestrate):
             month -= 1
         balance = monthlyunpaidbalance
         minimummonthlypayment += 10
-    print(minimummonthlypayment - 10)
+    print("Lowest Payment:", minimummonthlypayment - 10)
 def main():
     '''main'''
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print(payingdebtoffinayear(data[0], data[1]))
+    payingdebtoffinayear(data[0], data[1])
 if __name__ == "__main__":
     main()
