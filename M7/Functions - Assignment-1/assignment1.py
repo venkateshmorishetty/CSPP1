@@ -27,7 +27,7 @@ def paying_debtoff_inayear(balance, annualinterestrate, monthlypaymentrate):
         unpaid_balance = balance - minmonthlypayment
         balance = unpaid_balance + (unpaid_balance*monthlyinterestrate)
         month = month + 1
-    print("Remaining balance:" +str(round(balance, 2)))
+    print("Remaining balance: " +str(round(balance, 2)))
 
 def main():
     '''credit card balance'''
