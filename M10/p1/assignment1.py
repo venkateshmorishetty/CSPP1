@@ -14,7 +14,6 @@ def get_available_letters(letters_guessed):
     '''
     result = ''
     string1 = string.ascii_lowercase
-    print(string1)
     result = [i for i in string1 if i not in letters_guessed]
     return ''.join(result)
 def main():
