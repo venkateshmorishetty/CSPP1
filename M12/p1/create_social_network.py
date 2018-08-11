@@ -38,12 +38,12 @@ def create_social_network(data):
     adic = {}
     if len(list1) > 1:
         for index in list1:
-            kval = index.split('follows')
+            kval = index.split('follows ')
             value = kval[1].split(',')
             if kval[0] not in adic:
                 adic[kval[0]] = []
                 for i in value:
-                    adic[kval[0]].append(i)
+                    adic[kval[0]].append((i))
             else:
                 adic[kval[0]].append(kval[1])
         return adic
