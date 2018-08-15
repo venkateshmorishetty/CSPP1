@@ -25,7 +25,7 @@ def list1(hand):
 def ranks(hand):
     '''returns count of each value in list'''
     new = list1(hand)
-    ranks = []
+    counter = []
     j = 0
     new1 = new.copy()
     while j < len(new):
@@ -35,9 +35,9 @@ def ranks(hand):
             if temp == i:
                 c += 1
         temp1 = new[j]
-        ranks.append(c)
+        counter.append(c)
         j += 1
-    return ranks
+    return counter
 def is_twopair(hands):
     '''checks whether list is two_pair'''
     rank = ranks(hands)
