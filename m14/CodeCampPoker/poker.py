@@ -34,7 +34,6 @@ def ranks(hand):
         for i in new1:
             if temp == i:
                 count += 1
-        #temp1 = new[j]
         counter.append(count)
         j += 1
     return counter
