@@ -30,19 +30,19 @@ def ranks(hand):
     new1 = new.copy()
     while j < len(new):
         temp = new[j]
-        c = 0
+        count = 0
         for i in new1:
             if temp == i:
-                c += 1
-        temp1 = new[j]
-        counter.append(c)
+                count += 1
+        #temp1 = new[j]
+        counter.append(count)
         j += 1
     return counter
 def is_twopair(hands):
     '''checks whether list is two_pair'''
     rank = ranks(hands)
-    c = rank.count(2)
-    if c == 4:
+    count = rank.count(2)
+    if count == 4:
         return True
     return False
 def is_onepair(hands):
