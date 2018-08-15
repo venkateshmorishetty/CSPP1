@@ -3,16 +3,7 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-def is_straight(hand):
-    '''
-        How do we find out if the given hand is a straight?
-        The hand has a list of cards represented as strings.
-        There are multiple ways of checking if the hand is a straight.
-        Do we need both the characters in the string? No.
-        The first character is good enough to determine a straight
-        Think of an algorithm: given the card face value how to check if it a straight
-        Write the code for it and return True if it is a straight else return False
-    '''
+def list1(hand):
     new = []
     for j in hand:
         k = list(j)
@@ -29,6 +20,64 @@ def is_straight(hand):
         else:
             new.append(k[0])
     new = list(map(int, new))
+    return new
+def ranks(hand):
+    new = list1(hand)
+    ranks=[]
+    j=0
+    new1=new.copy()
+    while j < len(new):
+        temp = new[j]
+        c=0
+        for i in new1:
+            if temp == i:
+                c+=1
+        temp1=new[j]        
+        ranks.append(c)
+        j+=1    
+    return ranks
+def is_twopair(hands):
+    rank = ranks(hands)
+    c = rank.count(2)
+    if c == 4:
+        return True
+    return False    
+def is_onepair(hands):
+    rank = ranks(hands)
+    if max(rank) == 2:
+        return True
+    return False     
+def is_fourkind(hands):
+    rank = ranks(hands)
+    if max(rank) == 4:
+        return True
+    return False
+def is_threekind(hands):
+    rank = ranks(hands)
+    print("rank is",type(rank))
+    print("maximum is",type(max(rank)))
+    if max(rank) == 3:
+        return True
+    return False
+def fullhouse(hands):
+    rank = ranks(hands)
+    if 3 in rank:
+        if 2 in rank:
+            return True
+    return False
+
+
+def is_straight(hand):
+    '''
+        How do we find out if the given hand is a straight?
+        The hand has a list of cards represented as strings.
+        There are multiple ways of checking if the hand is a straight.
+        Do we need both the characters in the string? No.
+        The first character is good enough to determine a straight
+        Think of an algorithm: given the card face value how to check if it a straight
+        Write the code for it and return True if it is a straight else return False
+    '''
+    new = list1(hand)
     new.sort()
     for j in range(len(new)-1):
         if j == len(new):
@@ -81,15 +130,24 @@ def hand_rank(hand):
     # the second best would be a flush with the return value 2
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
-    # max in poker function uses these return values to select the best hand
-    if is_flush(hand) and is_straight(hand):
-        return 3
-    if is_straight(hand):
-        return 1
-    if is_flush(hand):
+    # # max in poker function uses these return values to select the best hand
+    if fullhouse(hand):
+        return 7
+    if is_twopair(hand):
         return 2
+    if is_onepair(hand):
+        return 1
+    if is_threekind(hand):
+        return 3
+    if is_fourkind(hand):
+        return 4
+    if is_flush(hand) and is_straight(hand):
+        return 8
+    if is_straight(hand):
+        return 5
+    if is_flush(hand):
+        return 6
     return 0
-    #return max(hands, key=hand_rank)
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
@@ -107,7 +165,7 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    return max(hands, key=hand_rank)
+    return (max(hands,key=hand_rank))
 if __name__ == "__main__":
     # read the number of test cases
     COUNT = int(input())
