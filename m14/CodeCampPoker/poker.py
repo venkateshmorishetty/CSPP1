@@ -25,7 +25,7 @@ def list1(hand):
 def ranks(hand):
     '''returns count of each value in list'''
     new = list1(hand)
-    #ranks = []
+    ranks = []
     j = 0
     new1 = new.copy()
     while j < len(new):
