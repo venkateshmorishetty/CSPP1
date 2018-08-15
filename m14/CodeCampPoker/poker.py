@@ -4,6 +4,7 @@
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 def list1(hand):
+    '''add t,j,q,k values in this function to list'''
     new = []
     for j in hand:
         k = list(j)
@@ -22,49 +23,53 @@ def list1(hand):
     new = list(map(int, new))
     return new
 def ranks(hand):
+    '''returns count of each value in list'''
     new = list1(hand)
-    ranks=[]
-    j=0
-    new1=new.copy()
+    #ranks = []
+    j = 0
+    new1 = new.copy()
     while j < len(new):
         temp = new[j]
-        c=0
+        c = 0
         for i in new1:
             if temp == i:
-                c+=1
-        temp1=new[j]        
+                c += 1
+        temp1 = new[j]
         ranks.append(c)
-        j+=1    
+        j += 1
     return ranks
 def is_twopair(hands):
+    '''checks whether list is two_pair'''
     rank = ranks(hands)
     c = rank.count(2)
     if c == 4:
         return True
-    return False    
+    return False
 def is_onepair(hands):
+    '''checks whether list is onepair'''
     rank = ranks(hands)
     if max(rank) == 2:
         return True
-    return False     
+    return False
 def is_fourkind(hands):
+    '''checks is list is four kind'''
     rank = ranks(hands)
     if max(rank) == 4:
         return True
     return False
 def is_threekind(hands):
+    '''checks is list is three kind'''
     rank = ranks(hands)
     if max(rank) == 3:
         return True
     return False
 def fullhouse(hands):
+    '''checks is list is full house'''
     rank = ranks(hands)
     if 3 in rank:
         if 2 in rank:
             return True
     return False
-
-
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -163,7 +168,7 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    return (max(hands,key=hand_rank))
+    return max(hands, key=hand_rank)
 if __name__ == "__main__":
     # read the number of test cases
     COUNT = int(input())
