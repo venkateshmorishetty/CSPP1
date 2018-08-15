@@ -54,8 +54,6 @@ def is_fourkind(hands):
     return False
 def is_threekind(hands):
     rank = ranks(hands)
-    print("rank is",type(rank))
-    print("maximum is",type(max(rank)))
     if max(rank) == 3:
         return True
     return False
