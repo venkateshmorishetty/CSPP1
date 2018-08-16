@@ -6,6 +6,7 @@
 maximum={}
 adic = {}
 def dictonary(rank,hand):
+    print(adic)
     if rank not in adic:
         adic[rank] = [hand]
     else:
@@ -13,6 +14,7 @@ def dictonary(rank,hand):
     final=0
     temp1=[]
     for i in adic[rank]:
+        print(adic)
         newlist=[]
         t = len(adic[rank])
  
@@ -178,13 +180,11 @@ def hand_rank(hand):
         dictonary(4,hand)
         return 4
     if is_flush(hand) and is_straight(hand):
-        dictonary(8,hand)
         return 8
     if is_straight(hand):
         dictonary(5,hand)
         return 5
     if is_flush(hand):
-        dictonary(6,hand)
         return 6
     return high_card(hand)
     return 0    
