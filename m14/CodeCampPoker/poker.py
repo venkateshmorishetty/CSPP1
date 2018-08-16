@@ -168,13 +168,12 @@ def hand_rank(hand):
         dictonary(7,hand)
         return 7
     if is_twopair(hand):
-        dictonary(2,hand)
-        return 2
+        return dictonary(2,hand)
     if is_onepair(hand):
         return dictonary(1,hand)
     if is_threekind(hand):
-        dictonary(3,hand)
-        return 3
+        return dictonary(3,hand)
+
     if is_fourkind(hand):
         dictonary(4,hand)
         return 4
