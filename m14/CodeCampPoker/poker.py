@@ -3,13 +3,13 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-maximum={}
+maximum = {}
 adic = {}
-def dictonary(rank,hand):
+def dictonary(rank, hand):
     if rank not in adic:
         adic[rank] = [hand]
     else:
-        adic[rank].append(hand)    
+        adic[rank].append(hand)
     final = 0
     temp1 = []
     for i in adic[rank]:
@@ -17,14 +17,12 @@ def dictonary(rank,hand):
         t = len(adic[rank])
         for num,value in i:
             newlist.append(num)
-        newlist = list1(newlist)   
+        newlist = list1(newlist)
         for number in newlist:
             c = newlist.count(number)
             if c == 2:temp1.append(number)
         final = max(set(temp1))
-    return int(final) / 10  
-              
-
+    return int(final) / 10
 def list1(hand):
     '''add t,j,q,k values in this function to list'''
     new = []
