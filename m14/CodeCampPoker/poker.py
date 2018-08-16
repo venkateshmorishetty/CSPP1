@@ -82,6 +82,7 @@ def is_threekind(hands):
 def fullhouse(hands):
     '''checks is list is full house'''
     rank = ranks(hands)
+    s=''
     if 3 in rank:
         if 2 in rank:
             s = True
