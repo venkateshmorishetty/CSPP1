@@ -3,7 +3,7 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-dictionary={}
+dictionary={'twopair':[],'onepair':[],'fourkind':[],'threekind':[],'full':[],'isstraight':[],'isflush':[]}
 def list1(hand):
     '''add t,j,q,k values in this function to list'''
     new = []
@@ -88,7 +88,7 @@ def fullhouse(hands):
     else:
         s = False
     if s:
-        dictionary[full].append(hands)
+        dictionary['full'].append(hands)
     return s        
 def high_card(hands):
     return 0
