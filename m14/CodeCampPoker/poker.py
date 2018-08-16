@@ -6,6 +6,7 @@
 maximum = {}
 adic = {}
 def dictonary(rank, hand):
+    '''dictionary'''
     if rank not in adic:
         adic[rank] = [hand]
     else:
@@ -18,8 +19,9 @@ def dictonary(rank, hand):
             newlist.append(num)
         newlist = list1(newlist)
         for number in newlist:
-            c = newlist.count(number)
-            if c == 2: temp1.append(number)
+            count = newlist.count(number)
+            if count == 2:
+                temp1.append(number)
         final = max(set(temp1))
     return int(final) / 10
 def list1(hand):
@@ -89,6 +91,7 @@ def fullhouse(hands):
             return True
     return False
 def high_card(hands):
+    '''checks is list is higher_card'''
     hands1 = list1(hands)
     temp1 = max(hands1)
     if temp1 not in maximum:
