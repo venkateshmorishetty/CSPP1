@@ -14,7 +14,7 @@ def dictonary(rank, hand):
     temp1 = []
     for i in adic[rank]:
         newlist = []
-        t = len(adic[rank])
+        #t = len(adic[rank])
         for num, value in i:
             newlist.append(num)
         newlist = list1(newlist)
@@ -68,32 +68,32 @@ def is_onepair(hands):
     '''checks whether list is onepair'''
     rank = ranks(hands)
     if max(rank) == 2:
-        return True  
-    return False         
+        return True
+    return False
 def is_fourkind(hands):
     '''checks is list is four kind'''
     rank = ranks(hands)
     if max(rank) == 4:
         return True
-    return False    
+    return False
 def is_threekind(hands):
     '''checks is list is three kind'''
     rank = ranks(hands)
     if max(rank) == 3:
         return True
-    return False    
+    return False
 def fullhouse(hands):
     '''checks is list is full house'''
     rank = ranks(hands)
     if 3 in rank:
         if 2 in rank:
             return True
-    return False                       
+    return False
 def high_card(hands):
-    hands1=list1(hands)
+    hands1 = list1(hands)
     temp1 = max(hands1)
     if temp1 not in maximum:
-        maximum[temp1]=hands   
+        maximum[temp1] = hands
     return max(maximum)/10
 def is_straight(hand):
     '''
@@ -164,7 +164,7 @@ def hand_rank(hand):
     if is_twopair(hand):
         return 2
     if is_onepair(hand):
-        return dictonary(1,hand)
+        return dictonary(1, hand)
     if is_threekind(hand):
         return 3
 
