@@ -6,12 +6,26 @@
 maximum={}
 adic = {}
 def dictonary(rank,hand):
-    global adic
     if rank not in adic:
         adic[rank] = [hand]
     else:
-        adic[rank]+=(hand)    
-    #print("adic is",adic)
+        adic[rank].append(hand)    
+    final=0
+    temp1=[]
+    for i in adic[rank]:
+        newlist=[]
+        t = len(adic[rank])
+ 
+        
+        for num,value in i:
+            newlist.append(num)
+        for number in newlist:
+            c=newlist.count(number)
+            if c==2:temp1.append(number)
+        final=max(set(temp1))
+    return int(final)/10  
+              
+
 def list1(hand):
     '''add t,j,q,k values in this function to list'''
     new = []
@@ -56,8 +70,6 @@ def is_twopair(hands):
 def is_onepair(hands):
     '''checks whether list is onepair'''
     rank = ranks(hands)
-    #print(rank)
-    #print(adic)
     if max(rank) == 2:
         return True  
     return False         
@@ -157,8 +169,7 @@ def hand_rank(hand):
         dictonary(2,hand)
         return 2
     if is_onepair(hand):
-        dictonary(1,hand)
-        return 1
+        return dictonary(1,hand)
     if is_threekind(hand):
         dictonary(3,hand)
         return 3
