@@ -81,8 +81,7 @@ def high_card(hands):
     hands1=list1(hands)
     temp1 = max(hands1)
     if temp1 not in maximum:
-        maximum[temp1]=hands
-    print(maximum)    
+        maximum[temp1]=hands   
     # print(maximum)    
     # print(maximum[max(maximum)])
     #print("it is",max(maximum))
