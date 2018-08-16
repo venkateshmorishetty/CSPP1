@@ -10,19 +10,19 @@ def dictonary(rank,hand):
         adic[rank] = [hand]
     else:
         adic[rank].append(hand)    
-    final=0
-    temp1=[]
+    final = 0
+    temp1 = []
     for i in adic[rank]:
-        newlist=[]
+        newlist = []
         t = len(adic[rank])
         for num,value in i:
             newlist.append(num)
         newlist = list1(newlist)   
         for number in newlist:
-            c=newlist.count(number)
-            if c==2:temp1.append(number)
-        final=max(set(temp1))
-    return int(final)/10  
+            c = newlist.count(number)
+            if c == 2:temp1.append(number)
+        final = max(set(temp1))
+    return int(final) / 10  
               
 
 def list1(hand):
