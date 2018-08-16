@@ -82,7 +82,7 @@ def high_card(hands):
     temp1 = max(hands1)
     if temp1 not in maximum:
         maximum[temp1]=hands   
-    return max(maximum)/10
+    return max(maximum)/100
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
