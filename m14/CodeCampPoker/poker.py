@@ -169,7 +169,7 @@ def hand_rank(hand):
     if fullhouse(hand):
         return 7
     if is_twopair(hand):
-        return dictonary(2,hand)
+        return 2
     if is_onepair(hand):
         return dictonary(1,hand)
     if is_threekind(hand):
