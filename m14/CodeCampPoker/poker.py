@@ -170,7 +170,7 @@ def hand_rank(hand):
     if is_onepair(hand):
         return dictonary(1,hand)
     if is_threekind(hand):
-        return dictonary(3,hand)
+        return 3
 
     if is_fourkind(hand):
         return 4
