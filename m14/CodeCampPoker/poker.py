@@ -113,7 +113,7 @@ def is_straight(hand):
         else:
             s = False
     if s:
-        dictionary['isstraight'].append(hands)
+        dictionary['isstraight'].append(hand)
     return s    
 def is_flush(hand):
     '''
