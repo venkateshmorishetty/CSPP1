@@ -10,7 +10,7 @@ def dictonary(rank,hand):
         adic[rank] = [hand]
     else:
         adic[rank].append(hand)    
-    print("adic is",adic)
+    #print("adic is",adic)
 def list1(hand):
     '''add t,j,q,k values in this function to list'''
     new = []
