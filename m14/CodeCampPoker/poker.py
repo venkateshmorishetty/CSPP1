@@ -6,10 +6,11 @@
 maximum={}
 adic = {}
 def dictonary(rank,hand):
+    global adic
     if rank not in adic:
         adic[rank] = [hand]
     else:
-        adic[rank].append(hand)    
+        adic[rank]+=(hand)    
     #print("adic is",adic)
 def list1(hand):
     '''add t,j,q,k values in this function to list'''
@@ -55,9 +56,11 @@ def is_twopair(hands):
 def is_onepair(hands):
     '''checks whether list is onepair'''
     rank = ranks(hands)
+    print(rank)
+    print(adic)
     if max(rank) == 2:
-        return True
-    return False 
+        return True  
+    return False         
 def is_fourkind(hands):
     '''checks is list is four kind'''
     rank = ranks(hands)
@@ -82,7 +85,7 @@ def high_card(hands):
     temp1 = max(hands1)
     if temp1 not in maximum:
         maximum[temp1]=hands   
-    return max(maximum)/100
+    return max(maximum)
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
