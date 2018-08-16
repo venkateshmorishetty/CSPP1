@@ -3,17 +3,17 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-maximum = {}
-adic = {}
+max_ = {}
+adic_ = {}
 def dictonary(rank, hand):
     '''dictionary'''
     if rank not in adic:
-        adic[rank] = [hand]
+        adic_[rank] = [hand]
     else:
-        adic[rank].append(hand)
+        adic_[rank].append(hand)
     final = 0
     temp1 = []
-    for i in adic[rank]:
+    for i in adic_[rank]:
         newlist = []
         for num, _ in i:
             newlist.append(num)
