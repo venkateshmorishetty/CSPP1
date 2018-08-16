@@ -3,6 +3,10 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+def copy(hand):
+    highvalue = 0
+    firstlist=hand.copy()
+    print("firstlist is",firstlist)
 def list1(hand):
     '''add t,j,q,k values in this function to list'''
     new = []
@@ -69,6 +73,12 @@ def fullhouse(hands):
         if 2 in rank:
             return True
     return False
+def high_card(hands):
+    new=list1(hands)
+    high = max(new)
+    if high == 14:
+        return True
+    return False        
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -109,7 +119,7 @@ def is_flush(hand):
             continue
         else:
             return False
-    return True
+    return True  
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -149,6 +159,8 @@ def hand_rank(hand):
         return 5
     if is_flush(hand):
         return 6
+    if high_card(hand):
+        return 8
     return 0
 def poker(hands):
     '''
