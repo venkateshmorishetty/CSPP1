@@ -167,7 +167,6 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # # max in poker function uses these return values to select the best hand
     if fullhouse(hand):
-        dictonary(7,hand)
         return 7
     if is_twopair(hand):
         return dictonary(2,hand)
@@ -177,12 +176,10 @@ def hand_rank(hand):
         return dictonary(3,hand)
 
     if is_fourkind(hand):
-        dictonary(4,hand)
         return 4
     if is_flush(hand) and is_straight(hand):
         return 8
     if is_straight(hand):
-        dictonary(5,hand)
         return 5
     if is_flush(hand):
         return 6
