@@ -6,7 +6,6 @@
 maximum={}
 adic = {}
 def dictonary(rank,hand):
-    print(adic)
     if rank not in adic:
         adic[rank] = [hand]
     else:
