@@ -94,9 +94,9 @@ def high_card(hands):
     '''checks is list is higher_card'''
     hands1 = list1(hands)
     temp1 = max(hands1)
-    if temp1 not in maximum:
-        maximum[temp1] = hands
-    return max(maximum)/10
+    if temp1 not in max_:
+        max_[temp1] = hands
+    return max(max_)/10
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
