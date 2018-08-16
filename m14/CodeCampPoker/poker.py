@@ -15,12 +15,12 @@ def dictonary(rank, hand):
     for i in adic[rank]:
         newlist = []
         t = len(adic[rank])
-        for num,value in i:
+        for num, value in i:
             newlist.append(num)
         newlist = list1(newlist)
         for number in newlist:
             c = newlist.count(number)
-            if c == 2:temp1.append(number)
+            if c == 2: temp1.append(number)
         final = max(set(temp1))
     return int(final) / 10
 def list1(hand):
