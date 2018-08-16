@@ -47,7 +47,7 @@ def is_twopair(hands):
     else:
         s = False
     if s:
-        dictionary[twopair].append(hands)    
+        dictionary['twopair'].append(hands)    
     return s
 def is_onepair(hands):
     '''checks whether list is onepair'''
@@ -57,7 +57,7 @@ def is_onepair(hands):
     else:
         s = False
     if s:
-        dictionary[onepair].append(hands)    
+        dictionary['onepair'].append(hands)    
     return s    
 def is_fourkind(hands):
     '''checks is list is four kind'''
@@ -67,7 +67,7 @@ def is_fourkind(hands):
     else:
         s = False
     if s:
-        dictionary[fourkind].append(hands)    
+        dictionary['fourkind'].append(hands)    
     return s
 def is_threekind(hands):
     '''checks is list is three kind'''
@@ -77,7 +77,7 @@ def is_threekind(hands):
     else:
         s = False
     if s:
-        dictionary[threekind].append(hands)    
+        dictionary['threekind'].append(hands)    
     return s
 def fullhouse(hands):
     '''checks is list is full house'''
@@ -113,7 +113,7 @@ def is_straight(hand):
         else:
             s = False
     if s:
-        dictionary[isstraight].append(hands)
+        dictionary['isstraight'].append(hands)
     return s    
 def is_flush(hand):
     '''
@@ -137,7 +137,7 @@ def is_flush(hand):
         else:
             s = False
     if s:
-        dictionary[isflush].append(hand)
+        dictionary['isflush'].append(hand)
     return s           
       
 def hand_rank(hand):
