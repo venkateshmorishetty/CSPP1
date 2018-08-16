@@ -56,8 +56,8 @@ def is_twopair(hands):
 def is_onepair(hands):
     '''checks whether list is onepair'''
     rank = ranks(hands)
-    print(rank)
-    print(adic)
+    #print(rank)
+    #print(adic)
     if max(rank) == 2:
         return True  
     return False         
