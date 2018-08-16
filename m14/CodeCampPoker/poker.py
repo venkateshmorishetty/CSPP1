@@ -19,6 +19,8 @@ def dictonary(rank,hand):
         
         for num,value in i:
             newlist.append(num)
+        newlist = list1(newlist)
+        print(newlist)    
         for number in newlist:
             c=newlist.count(number)
             if c==2:temp1.append(number)
