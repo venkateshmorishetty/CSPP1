@@ -7,7 +7,7 @@ max_ = {}
 adic_ = {}
 def dictonary(rank, hand):
     '''dictionary'''
-    if rank not in adic:
+    if rank not in adic_:
         adic_[rank] = [hand]
     else:
         adic_[rank].append(hand)
