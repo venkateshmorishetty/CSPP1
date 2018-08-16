@@ -3,6 +3,14 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+maximum={}
+adic = {}
+def dictonary(rank,hand):
+    if rank not in adic:
+        adic[rank] = [hand]
+    else:
+        adic[rank].append(hand)    
+    print("adic is",adic)
 def list1(hand):
     '''add t,j,q,k values in this function to list'''
     new = []
@@ -70,7 +78,14 @@ def fullhouse(hands):
             return True
     return False                       
 def high_card(hands):
-    return 0
+    hands1=list1(hands)
+    temp1 = max(hands1)
+    if temp1 not in maximum:
+        maximum[temp1]=hands
+    # print(maximum)    
+    # print(maximum[max(maximum)])
+    #print("it is",max(maximum))
+    return max(maximum)/100
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -136,24 +151,30 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # # max in poker function uses these return values to select the best hand
     if fullhouse(hand):
+        dictonary(7,hand)
         return 7
     if is_twopair(hand):
+        dictonary(2,hand)
         return 2
     if is_onepair(hand):
-
+        dictonary(1,hand)
         return 1
     if is_threekind(hand):
+        dictonary(3,hand)
         return 3
     if is_fourkind(hand):
+        dictonary(4,hand)
         return 4
     if is_flush(hand) and is_straight(hand):
+        dictonary(8,hand)
         return 8
     if is_straight(hand):
+        dictonary(5,hand)
         return 5
     if is_flush(hand):
+        dictonary(6,hand)
         return 6
-    if high_card(hand):
-        return 8
+    return high_card(hand)
     return 0    
 def poker(hands):
     '''
