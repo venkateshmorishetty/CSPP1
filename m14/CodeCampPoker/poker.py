@@ -3,7 +3,6 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-dictionary={'twopair':[],'onepair':[],'fourkind':[],'threekind':[],'full':[],'isstraight':[],'isflush':[]}
 def list1(hand):
     '''add t,j,q,k values in this function to list'''
     new = []
@@ -43,54 +42,33 @@ def is_twopair(hands):
     rank = ranks(hands)
     count = rank.count(2)
     if count == 4:
-        s = True
-    else:
-        s = False
-    if s:
-        dictionary['twopair'].append(hands)    
-    return s
+        return True
+    return False
 def is_onepair(hands):
     '''checks whether list is onepair'''
     rank = ranks(hands)
     if max(rank) == 2:
-        s = True
-    else:
-        s = False
-    if s:
-        dictionary['onepair'].append(hands)    
-    return s    
+        return True
+    return False 
 def is_fourkind(hands):
     '''checks is list is four kind'''
     rank = ranks(hands)
     if max(rank) == 4:
-        s = True
-    else:
-        s = False
-    if s:
-        dictionary['fourkind'].append(hands)    
-    return s
+        return True
+    return False    
 def is_threekind(hands):
     '''checks is list is three kind'''
     rank = ranks(hands)
     if max(rank) == 3:
-        s = True
-    else:
-        s = False
-    if s:
-        dictionary['threekind'].append(hands)    
-    return s
+        return True
+    return False    
 def fullhouse(hands):
     '''checks is list is full house'''
     rank = ranks(hands)
-    s=''
     if 3 in rank:
         if 2 in rank:
-            s = True
-    else:
-        s = False
-    if s:
-        dictionary['full'].append(hands)
-    return s        
+            return True
+    return False                       
 def high_card(hands):
     return 0
 def is_straight(hand):
@@ -105,17 +83,14 @@ def is_straight(hand):
     '''
     new = list1(hand)
     new.sort()
-    s = True
     for j in range(len(new)-1):
         if j == len(new):
             break
         elif new[j+1]-new[j] == 1:
             continue
         else:
-            s = False
-    if s:
-        dictionary['isstraight'].append(hand)
-    return s    
+            return False
+    return True
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
@@ -130,17 +105,13 @@ def is_flush(hand):
         k = list(j)
         new += k[1]
     temp = new[0]
-    s = True
     for j in new:
         k = j
         if temp == k:
             continue
         else:
-            s = False
-    if s:
-        dictionary['isflush'].append(hand)
-    return s           
-      
+            return False
+    return True
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -169,6 +140,7 @@ def hand_rank(hand):
     if is_twopair(hand):
         return 2
     if is_onepair(hand):
+
         return 1
     if is_threekind(hand):
         return 3
@@ -182,7 +154,7 @@ def hand_rank(hand):
         return 6
     if high_card(hand):
         return 8
-    return 0
+    return 0    
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
