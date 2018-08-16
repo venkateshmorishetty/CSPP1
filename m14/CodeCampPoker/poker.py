@@ -14,15 +14,13 @@ def dictonary(rank,hand):
     final=0
     temp1=[]
     for i in adic[rank]:
-        print(adic)
         newlist=[]
         t = len(adic[rank])
  
         
         for num,value in i:
             newlist.append(num)
-        newlist = list1(newlist)
-        print(newlist)    
+        newlist = list1(newlist)   
         for number in newlist:
             c=newlist.count(number)
             if c==2:temp1.append(number)
