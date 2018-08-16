@@ -166,7 +166,6 @@ def hand_rank(hand):
         return dictonary(1, hand)
     if is_threekind(hand):
         return 3
-
     if is_fourkind(hand):
         return 4
     if is_flush(hand) and is_straight(hand):
@@ -176,7 +175,7 @@ def hand_rank(hand):
     if is_flush(hand):
         return 6
     return high_card(hand)
-    return 0    
+    return 0
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
