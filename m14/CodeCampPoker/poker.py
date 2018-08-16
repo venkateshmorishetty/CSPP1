@@ -15,8 +15,6 @@ def dictonary(rank,hand):
     for i in adic[rank]:
         newlist=[]
         t = len(adic[rank])
- 
-        
         for num,value in i:
             newlist.append(num)
         newlist = list1(newlist)   
