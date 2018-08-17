@@ -11,8 +11,8 @@ def similarity(dict1, dict2):
     string1 = dict1.lower()
     new1 = string1.strip().split(" ")
     new2 = string2.strip().split(" ")
-    # new3 = []
-    # new4 = []
+    new3 = []
+    new4 = []
     stopword = load_stopwords("stopwords.txt")
     for word in new1:
         i = re.sub('[^a-z\ ]', '', word)
@@ -20,8 +20,8 @@ def similarity(dict1, dict2):
     for word in new2:
         i = re.sub('[^a-z\ ]', '', word)
         new4.append(i)
-    # list3 = []
-    # list4 = []
+    list3 = []
+    list4 = []
     for i in new3:
         if i not in stopword and len(i) > 0:
             list3.append(i)
@@ -40,12 +40,12 @@ def similarity(dict1, dict2):
             dictionary2[i] += 1
         else:
             dictionary2[i] = 1
-    # numerator = 0
+    numerator = 0
     for i in dictionary1:
         if i in dictionary2:
             numerator = numerator + (dictionary1[i]*dictionary2[i])
-    # denominator1 = 0
-    # denominator2 = 0
+    denominator1 = 0
+    denominator2 = 0
     for i in dictionary1:
         denominator1 = denominator1 + (dictionary1[i])**2
     for i in dictionary2:
