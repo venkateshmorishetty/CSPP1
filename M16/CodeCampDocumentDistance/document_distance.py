@@ -15,10 +15,10 @@ def similarity(dict1, dict2):
     new4 = []
     stopword = load_stopwords("stopwords.txt")
     for word in new1:
-        i = re.sub('[^a-z\_]', '', word)
+        i = re.sub('[r,^a-z\ ]', '', word)
         new3.append(i)
     for word in new2:
-        i = re.sub('[^a-z\_]', '', word)
+        i = re.sub('[r,^a-z\ ]', '', word)
         new4.append(i)
     list3 = []
     list4 = []
