@@ -52,13 +52,13 @@ def similarity(dict1, dict2):
         denominator2 = denominator2 + (dictionary2[i])**2
     denom = (math.sqrt(denominator1))*(math.sqrt(denominator2))
     return numerator / denom
-def load_stopwords(filename):
+def load_stopwords(_):
     '''
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(filename, 'r') as filename:
-        for line in filename:
+    with open(_, 'r') as _:
+        for line in _:
             stopwords[line.strip()] = 0
     return stopwords
 def main():
