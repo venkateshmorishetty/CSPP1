@@ -9,55 +9,51 @@ def similarity(dict1, dict2):
     string1 = ''
     string2 = ''
     #string1 = dict1.lower()
-    string2 = dict2.lower().strip().split( )
-    string1 = dict1.lower().strip().split( )
-    #new1 = re.sub('[^A-Z ]', '', string1).strip()
-    #new2 = re.sub('[^A-Z ]', '', string2).strip()
-    # print(string1)
-
+    string2 = dict2.lower()
+    string1 = dict1.lower()
+    new1 = string1.strip().split(" ")
+    new2 = string2.strip().split(" ")
+    new3=[]
+    new4=[]
     stopword = load_stopwords("stopwords.txt")
-    # stop=[]
-    # for k in stopword:
-    #     stop.append(k)
-    list3=[]    
-    for i in string1:
-        if i not in stopword:
+    for word in new1:
+        i=re.sub('[^a-z\ ]', '',word)
+        new3.append(i)
+    for word in new2:
+        i=re.sub('[^a-z\ ]', '',word)
+        new4.append(i)
+    list3=[] 
+    list4=[]   
+    for i in new3:
+        if i not in stopword and len(i)>0:
             list3.append(i)
-    #print("result",list3)
-    list4=[]
-    for i in string2:
-        if i not in stopword:
+    for i in new4:
+        if i not in stopword and len(i)>0:
             list4.append(i)
-    #print(list4)
     dictionary1={}
-    c1=0
-    c2=0
+    dictionary2={}
     for i in list3:
-        if i in list4:
-            dictionary1[i]=[c1+1,c2+1]
+        if i in dictionary1:
+            dictionary1[i]+=1
         else:
-            dictionary1[i]=[c1+1,c2]
+            dictionary1[i]=1 
     for i in list4:
-        if i in list3:
-            dictionary1[i]=[c1+1,c2+1]
+        if i in dictionary2:
+            dictionary2[i]+=1
         else:
-            dictionary1[i]=[c1+0,c2+1]            
-    #print(sorted(dictionary1))       
+            dictionary2[i]=1                     
     Numerator=0  
     for i in dictionary1:
-        Numerator=Numerator+int(dictionary1[i][0])*int(dictionary1[i][1])
-    #print(Numerator) 
+        if i in dictionary2:
+            Numerator=Numerator+(dictionary1[i]*dictionary2[i])
     Denominator1=0
     Denominator2=0
     for i in dictionary1:
-        Denominator1=Denominator1+dictionary1[i][0]**2
-    for i in dictionary1:
-        Denominator2=Denominator2+dictionary1[i][1]**2 
-    denom=math.sqrt(Denominator1)*math.sqrt(Denominator2)
-    #print(denom) 
+        Denominator1=Denominator1+(dictionary1[i])**2
+    for i in dictionary2:
+        Denominator2=Denominator2+(dictionary2[i])**2 
+    denom=(math.sqrt(Denominator1))*(math.sqrt(Denominator2)) 
     return Numerator/denom
-
-
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
