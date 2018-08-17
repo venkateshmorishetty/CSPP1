@@ -23,10 +23,12 @@ def similarity(dict1, dict2):
     list3 = []
     list4 = []
     for i in new3:
-        if i not in stopword and len(i) > 0:
+        val = len(i)
+        if i not in stopword and val > 0:
             list3.append(i)
     for i in new4:
-        if i not in stopword and len(i) > 0:
+        val = len(i)
+        if i not in stopword and val > 0:
             list4.append(i)
     dictionary1 = {}
     dictionary2 = {}
