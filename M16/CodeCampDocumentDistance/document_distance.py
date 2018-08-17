@@ -9,8 +9,8 @@ def similarity(dict1, dict2):
     '''
     string2 = dict2.lower()
     string1 = dict1.lower()
-    new1 = string1.strip().split(" ")
-    new2 = string2.strip().split(" ")
+    new1 = string1.split(" ")
+    new2 = string2.split(" ")
     new3 = []
     new4 = []
     stopword = load_stopwords("stopwords.txt")
