@@ -9,24 +9,24 @@ def similarity(dict1, dict2):
     string1 = ''
     string2 = ''
     #string1 = dict1.lower()
-    string2 = dict2.lower().split( )
-    string1 = dict1.lower().split( )
-    string1 = re.sub('[^a-zA-Z ]', '', string1)
-    string2 = re.sub('[^a-zA-Z ]', '', string2)
-    print(string1)
+    string2 = dict2.lower().strip().split( )
+    string1 = dict1.lower().strip().split( )
+    #new1 = re.sub('[^A-Z ]', '', string1).strip()
+    #new2 = re.sub('[^A-Z ]', '', string2).strip()
+    # print(string1)
 
     stopword = load_stopwords("stopwords.txt")
-    stop=[]
-    for k in stopword:
-        stop.append(k)
+    # stop=[]
+    # for k in stopword:
+    #     stop.append(k)
     list3=[]    
     for i in string1:
-        if i not in stop:
+        if i not in stopword:
             list3.append(i)
     #print("result",list3)
     list4=[]
     for i in string2:
-        if i not in stop:
+        if i not in stopword:
             list4.append(i)
     #print(list4)
     dictionary1={}
@@ -34,15 +34,15 @@ def similarity(dict1, dict2):
     c2=0
     for i in list3:
         if i in list4:
-            dictionary1[i]=c1+1,c2+1
+            dictionary1[i]=[c1+1,c2+1]
         else:
             dictionary1[i]=[c1+1,c2]
     for i in list4:
         if i in list3:
-            dictionary1[i]=c1+1,c2+1
+            dictionary1[i]=[c1+1,c2+1]
         else:
             dictionary1[i]=[c1+0,c2+1]            
-    print(sorted(dictionary1))       
+    #print(sorted(dictionary1))       
     Numerator=0  
     for i in dictionary1:
         Numerator=Numerator+int(dictionary1[i][0])*int(dictionary1[i][1])
