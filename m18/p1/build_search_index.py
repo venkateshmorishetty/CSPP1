@@ -25,7 +25,7 @@
 
 import re
 adic = {}
-new1=[]
+new1 = []
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
@@ -35,8 +35,6 @@ def load_stopwords(filename):
         for line in f_stopwords:
             stopwords[line.strip()] = 0
     return stopwords
-
-
 def word_list(text):
     '''
         Change case to lower and split the words using a SPACE
@@ -45,60 +43,40 @@ def word_list(text):
     '''
     n = text.lower()
     m = n.split(" ")
-    k=[]
+    k = []
     for i in m:
-        k.append(re.sub('[^a-z/ ]','', i).strip())
-    #print(k)        
-    return k    
-
+        k.append(re.sub('[^a-z/ ]', '', i).strip())
+    return k
 def build_search_index(docs):
     '''
         Process the docs step by step as given below
     '''
 
     # initialize a search index (an empty dictionary)
-    
     stop = load_stopwords("stopwords.txt")
-    #j=[]
-    m=[]
+    m = []
     for j in docs:
         v = word_list(j)
         m.append(v)
-    #print("m issssss0",m)    
-    new1=[]
-    new2=[]
+    new1 = []
+    new2 = []
     for i in m:
         for j in i:
-            print(j)
             if j not in stop:
                 new1.append(j)
         new2.append(new1)
-        new1=[]        
-    print("new2@@@@@@@@@@@@@@@@@@@",new2)
-    c1=0 
-    c=1
+        new1 = []
+    c1 = 1 
+    c = 1
     for j in new2:
         for i in j:
-            c1=new2.index(j)
+            c1 = new2.index(j)
             if i not in adic:
-                adic[i]=(c1,c)
-            # if c1 in adic:
-            #     adic[i] += (c1,c)
-            else:
-                adic[i][c1] += +1 
-
-            # elif i in adic: 
-            #      adic[i].append(c1,c)
-                          
-        c1=0    
-    # for i in adic:
-    #     tem = adic[i]
-    #     tem1=set(tem)
-
-
-
-    return adic            
-
+                adic[i] = (c1, c)
+            elif c1 in adic:
+                adic[i].append((c1, +1))
+        c1 = 0
+    return adic
     # iterate through all the docs
     # keep track of doc_id which is the list index corresponding the document
     # hint: use enumerate to obtain the list index in the for loop
