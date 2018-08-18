@@ -39,11 +39,11 @@ def search(search_index, query):
     '''
     set1 = []
     adic = search_index
-    spliti = query.split(" ")
-    low = []
-    for i in spliti:
-        low.append(i.lower())
-    for i in low:
+    m = query.split(" ")
+    v = []
+    for i in m:
+        v.append(i.lower())
+    for i in v:
         if i  in adic:
             set1.append(adic[i])
     new = []
@@ -65,7 +65,7 @@ def main():
         main function
     '''
     # This line loads the search index
-    search_index = input()
+    search_index = eval(input())
 
     # read the number of search queries
     lines = int(input())
