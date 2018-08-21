@@ -87,7 +87,8 @@ class Hand(object):
                 self.hand[i] -=1
             else:    
                 return False
-        return True        break    
+                break
+        return True   
         raise NotImplementedError()
     
 myHand = Hand(7)
