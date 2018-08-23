@@ -7,12 +7,15 @@ def mult_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
-    mul = copy.deepcopy(m1)
+    mul = []
     for i in range(len(m1)):
+        m=[]
         for j in range(len(m2[0])):
-            mul[i][j] = 0
+            res = 0
             for k in range(len(m2)):
-                mul[i][j] += int(m1[i][k])*int(m2[k][j])
+                res += int(m1[i][k])*int(m2[k][j])
+            m.append(res)
+        mul.append(m)        
     return mul            
 def add_matrix(m1, m2):
     '''
