@@ -77,7 +77,7 @@ def main():
     n2 = input().split(',')
     matrix2 = read_matrix(n2)
     print(add_matrix(matrix1,matrix2))
-    if n1[1] == n2[0]:
+    if n1[1] != n2[0]:
         return "Error: Matrix shapes invalid for mult"
     else:        
         print(mult_matrix(matrix1,matrix2))
