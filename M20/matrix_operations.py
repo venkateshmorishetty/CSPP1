@@ -57,11 +57,8 @@ def read_matrix(size):
     for i in range(0,rows,1):
         row = input().split( )
         matrix.append(row)
-        total += len(row)
-    if total != rows*cols:
-        print("Error: Invalid input for the matrix") 
-    else:
-        return matrix       
+        total += len(row)   
+    return matrix,total       
     
 
 def main():
@@ -73,12 +70,16 @@ def main():
 
     # multiply matrix 1 and matrix 2
     n1 = input().split(',')
-    matrix1 = read_matrix(n1)
+    matrix1,total1 = read_matrix(n1)
     n2 = input().split(',')
-    matrix2 = read_matrix(n2)
+    matrix2,total2 = read_matrix(n2)
+    if total1 != total2:
+        print("Error: Invalid input for the matrix")
+        return None
     print(add_matrix(matrix1,matrix2))
     if n1[1] != n2[0]:
-        return "Error: Matrix shapes invalid for mult"
+        print("Error: Matrix shapes invalid for mult")
+        return None
     else:        
         print(mult_matrix(matrix1,matrix2))
 
