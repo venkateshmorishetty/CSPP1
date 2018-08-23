@@ -1,5 +1,5 @@
 import copy
-def mult_matrix(m1, m2):
+def mult_matrix(m1, m2,temp1,temp2):
     '''
         check if the matrix1 columns = matrix2 rows
         mult the matrices and return the result matrix
@@ -7,6 +7,9 @@ def mult_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
+    if temp1 != temp2:
+            print("Error: Matrix shapes invalid for mult")
+            return None
     mul = []
     for i in range(len(m1)):
         m=[]
@@ -77,11 +80,6 @@ def main():
         print("Error: Invalid input for the matrix")
     else:
         print(add_matrix(matrix1,matrix2))
-        if n1[1] != n2[0]:
-            print("Error: Matrix shapes invalid for mult")
-
-        else:        
-            print(mult_matrix(matrix1,matrix2))
-
+        print(mult_matrix(matrix1,matrix2,n1[1],n2[0]))
 if __name__ == '__main__':
     main()
