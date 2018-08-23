@@ -50,7 +50,8 @@ def read_matrix(size):
     '''
     total = 0
     matrix = []
-    for _ in range(0, size[0], 1):
+    val1 = int(size[0])
+    for _ in range(0, val1, 1):
         row = input().split()
         matrix.append(row)
         total += len(row)
