@@ -136,8 +136,7 @@ class PlaintextMessage(Message):
         '''
         self.t = text
         self.s = shift
-        print(self.t)
-        print(self.s)
+
 
     def get_shift(self):
         '''
