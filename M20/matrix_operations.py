@@ -12,11 +12,11 @@ def mult_matrix(matrix1, matrix2, temp1, temp2):
         print("Error: Matrix shapes invalid for mult")
         return None
     mul = []
-    for itemp in range(len(matrix1)):
+    for itemp in range(0, len(matrix1), 1):
         temp = []
         for jtemp in range(len(matrix2[0])):
             res = 0
-            for ktemp in range(len(matrix2)):
+            for ktemp in range(0, len(matrix2, 1)):
                 res += int(matrix1[itemp][ktemp])*int(matrix2[ktemp][jtemp])
             temp.append(res)
         mul.append(temp)
