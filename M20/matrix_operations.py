@@ -16,7 +16,7 @@ def mult_matrix(matrix1, matrix2, temp1, temp2):
         temp = []
         for jtemp in range(len(matrix2[0])):
             res = 0
-            for ktemp in range(0, len(matrix2, 1)):
+            for ktemp in range(0, len(matrix2), 1):
                 res += int(matrix1[itemp][ktemp])*int(matrix2[ktemp][jtemp])
             temp.append(res)
         mul.append(temp)
