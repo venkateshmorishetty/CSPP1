@@ -75,13 +75,13 @@ def main():
     matrix2,total2 = read_matrix(n2)
     if total1 != total2:
         print("Error: Invalid input for the matrix")
-        return None
-    print(add_matrix(matrix1,matrix2))
-    if n1[1] != n2[0]:
-        print("Error: Matrix shapes invalid for mult")
-        return None
-    else:        
-        print(mult_matrix(matrix1,matrix2))
+    else:
+        print(add_matrix(matrix1,matrix2))
+        if n1[1] != n2[0]:
+            print("Error: Matrix shapes invalid for mult")
+
+        else:        
+            print(mult_matrix(matrix1,matrix2))
 
 if __name__ == '__main__':
     main()
