@@ -22,7 +22,7 @@ def tictac():
     diag1 = []
     diag2 = []
     matrix2 = []
-    for itemp in range(len(tt)):
+    for itemp in range(0, len(tt), 1):
         list2 = []
         k = copy.deepcopy(tt[itemp])
         temp = set(k)
@@ -69,8 +69,7 @@ def tictac():
         return 'o'
     if rank1 == rank2:
         return "draw"
-    else:
-        return 'x'
+    return 'x'
 def main():
     '''mainfunction calls the tictac function'''
     print(tictac())
