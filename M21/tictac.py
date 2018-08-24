@@ -6,10 +6,21 @@ def tictac():
     for i in range(0,3,1):
         n += [input().split(' ')]
     # print(n)
+    count1 = 0
+    count2 = 0
     for i in n:
-        for j in i:
+        for j in i: 
             if j != 'o' and j != 'x' and j != '.':
                 return "invalid game"
+            if j == 'o':
+                count1 += 1 
+            if j == 'x':
+                count2 += 1
+    # print(count1)
+    # print(count2)            
+    if count1 != count2:
+        return "invalid game"                   
+
 
     
     diag1 = []
