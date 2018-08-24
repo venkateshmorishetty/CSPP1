@@ -5,7 +5,7 @@ def tictac():
     rank1 = 0 #this rank is for o
     rank2 = 0 #this rank is for x
     tt = []
-    for i in range(0, 3, 1):
+    for _ in range(0, 3, 1):
         tt += [input().split(' ')]
     count1 = 0
     count2 = 0
