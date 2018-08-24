@@ -4,27 +4,27 @@ def tictac():
     '''tictac implementation'''
     rank1 = 0 #this rank is for o
     rank2 = 0 #this rank is for x
-    tt = []
+    t_t = []
     for _ in range(0, 3, 1):
-        tt += [input().split(' ')]
+        t_t += [input().split(' ')]
     count1 = 0
     count2 = 0
-    for itemp in tt:
+    for itemp in t_t:
         for jtemp in itemp:
-            if jtemp != 'o' and jtemp != 'x' and jtemp != '.':
+            if jtemp not in ('o', 'x', '.'):
                 return "invalid input"
-            elif jtemp == 'o':
+            if jtemp == 'o':
                 count1 += 1
-            elif jtemp == 'x':
+            if jtemp == 'x':
                 count2 += 1
     if abs(count1 - count2) != 1:
         return "invalid game"
     diag1 = []
     diag2 = []
     matrix2 = []
-    for itemp in range(0, len(tt), 1):
+    for itemp in range(0, len(t_t), 1):
         list2 = []
-        k = copy.deepcopy(tt[itemp])
+        k = copy.deepcopy(t_t[itemp])
         temp = set(k)
         if len(temp) == 1:
             lis = list(temp)
@@ -34,12 +34,12 @@ def tictac():
                 rank2 = 1
         lis = []
         k = []
-        for jtemp in range(0, len(tt[itemp]), 1):
-            list2.append(tt[jtemp][itemp])
+        for jtemp in range(0, len(t_t[itemp]), 1):
+            list2.append(t_t[jtemp][itemp])
             if itemp == jtemp:
-                diag1.append(tt[itemp][jtemp])
-            if itemp + jtemp == len(tt) - 1:
-                diag2.append(tt[itemp][jtemp])
+                diag1.append(t_t[itemp][jtemp])
+            if itemp + jtemp == len(t_t) - 1:
+                diag2.append(t_t[itemp][jtemp])
         matrix2.append(list2)
     for itemp in range(0, len(matrix2), 1):
         k = copy.deepcopy(matrix2[itemp])
