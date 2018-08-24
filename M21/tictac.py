@@ -18,7 +18,7 @@ def tictac():
                 count2 += 1
     # print(count1)
     # print(count2)            
-    if count1 != count2:
+    if count1 != count2-1:
         return "invalid game"                   
 
 
