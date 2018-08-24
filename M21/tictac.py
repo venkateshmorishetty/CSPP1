@@ -35,7 +35,7 @@ def tictac():
         lis = []
         k = []
         for jtemp in range(len(tt[itemp])):
-            list2.append(tictac[jtemp][itemp])
+            list2.append(tt[jtemp][itemp])
             if itemp == jtemp:
                 diag1.append(tt[itemp][jtemp])
             if itemp + jtemp == len(tt) - 1:
