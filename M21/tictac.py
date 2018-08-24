@@ -16,13 +16,15 @@ def tictac():
                 count1 += 1 
             if j == 'x':
                 count2 += 1
-    # print(count1)
-    # print(count2)            
+    print(count1)
+    print(count2)            
     # if count1 != count2:
     #     return "invalid game"
     # if count2 != count1-1:
     #     return "invalid game"                       
 
+    if abs(count1 - count2)!=1:
+        return "invalid game"
 
     
     diag1 = []
