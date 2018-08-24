@@ -11,7 +11,7 @@ def tictac():
     for i in n:
         for j in i: 
             if j != 'o' and j != 'x' and j != '.':
-                return "invalid game"
+                return "invalid input"
             if j == 'o':
                 count1 += 1 
             if j == 'x':
