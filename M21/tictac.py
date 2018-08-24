@@ -13,9 +13,9 @@ def tictac():
         for jtemp in itemp:
             if jtemp != 'o' and jtemp != 'x' and jtemp != '.':
                 return "invalid input"
-            if jtemp == 'o':
+            elif jtemp == 'o':
                 count1 += 1
-            if jtemp == 'x':
+            elif jtemp == 'x':
                 count2 += 1
     if abs(count1 - count2) != 1:
         return "invalid game"
