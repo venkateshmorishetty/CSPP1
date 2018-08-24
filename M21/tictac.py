@@ -15,7 +15,7 @@ def tictac():
                 return "invalid input"
             if jtemp == 'o':
                 count1 += 1
-            else:
+            elif jtemp == 'x':
                 count2 += 1
     if abs(count1 - count2) != 1:
         return "invalid game"
