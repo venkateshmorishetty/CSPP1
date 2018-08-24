@@ -4,7 +4,7 @@ def tictac():
     rank1 = 0 #this rank is for o
     rank2 = 0 #this rank is for x
     n = []
-    for i in range(0,3,1):
+    for i in range(0, 3, 1):
         n += [input().split(' ')]
     count1 = 0
     count2 = 0
