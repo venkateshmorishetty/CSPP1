@@ -44,7 +44,7 @@ def tictac():
         k = copy.deepcopy(matrix2[itemp])
         temp = set(k)
         if len(temp) ==1:
-            l = list(temp)
+            lis = list(temp)
             if lis[0] == 'o':
                 rank1 =1
             elif lis[0] == 'x':
