@@ -4,12 +4,12 @@ def tictac():
     '''tictac implementation'''
     rank1 = 0 #this rank is for o
     rank2 = 0 #this rank is for x
-    tictac = []
+    tt = []
     for i in range(0, 3, 1):
-        tictac += [input().split(' ')]
+        tt += [input().split(' ')]
     count1 = 0
     count2 = 0
-    for itemp in tictac:
+    for itemp in tt:
         for jtemp in itemp:
             if jtemp != 'o' and jtemp != 'x' and jtemp != '.':
                 return "invalid input"
@@ -22,9 +22,9 @@ def tictac():
     diag1 = []
     diag2 = []
     matrix2 = []
-    for itemp in range(len(tictac)):
+    for itemp in range(len(tt)):
         list2 = []
-        k = copy.deepcopy(tictac[itemp])
+        k = copy.deepcopy(tt[itemp])
         temp = set(k)
         if len(temp) == 1:
             lis = list(temp)
@@ -34,12 +34,12 @@ def tictac():
                 rank2 = 1
         lis = []
         k = []
-        for jtemp in range(len(tictac[itemp])):
+        for jtemp in range(len(tt[itemp])):
             list2.append(tictac[jtemp][itemp])
             if itemp == jtemp:
-                diag1.append(tictac[itemp][jtemp])
-            if itemp + jtemp == len(tictac) - 1:
-                diag2.append(tictac[itemp][jtemp])
+                diag1.append(tt[itemp][jtemp])
+            if itemp + jtemp == len(tt) - 1:
+                diag2.append(tt[itemp][jtemp])
         matrix2.append(list2)
     for itemp in range(len(matrix2)):
         k = copy.deepcopy(matrix2[itemp])
@@ -72,6 +72,7 @@ def tictac():
     else:
         return 'x'
 def main():
+    '''mainfunction calls the tictac function'''
     print(tictac())
 if __name__ == "__main__":
     main()
