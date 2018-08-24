@@ -66,15 +66,16 @@ def build_search_index(docs):
                 new1.append(j)
         new2.append(new1)
         new1 = []
-    c1 = 1 
-    c = 1
+    # c1 = 1 
+    # c = 1
     for j in new2:
-        for i in j:
-            c1 = new2.index(j)
+        c1 = new2.index(j)
+        for i in set(j):
             if i not in adic:
-                adic[i] = (c1, c)
-            elif c1 in adic:
-                adic[i].append((c1, +1))
+                adic[i] = [(c1, j.count(i))]
+            else:
+                # adic[i][0].append(c1)
+                adic[i].append((c1, j.count(i)))
         c1 = 0
     return adic
     # iterate through all the docs
