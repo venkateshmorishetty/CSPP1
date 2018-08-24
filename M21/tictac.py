@@ -8,9 +8,9 @@ def tictac():
     # print(n)
     for i in n:
         for j in i:
-            if j != 'o' or j != 'x' or j != '.':
+            if j != 'o' and j != 'x' and j != '.':
                 return "invalid game"
-                
+
     
     diag1 = []
     diag2 = []
