@@ -34,14 +34,14 @@ def tictac():
                 rank2 = 1
         lis = []
         k = []
-        for jtemp in range(len(tt[itemp])):
+        for jtemp in range(0,len(tt[itemp]),1):
             list2.append(tt[jtemp][itemp])
             if itemp == jtemp:
                 diag1.append(tt[itemp][jtemp])
             if itemp + jtemp == len(tt) - 1:
                 diag2.append(tt[itemp][jtemp])
         matrix2.append(list2)
-    for itemp in range(len(matrix2)):
+    for itemp in range(0,len(matrix2),1):
         k = copy.deepcopy(matrix2[itemp])
         temp = set(k)
         if len(temp) == 1:
