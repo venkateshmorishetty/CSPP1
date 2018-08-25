@@ -26,8 +26,7 @@ def check_sudoku(sudoku):
     for i in transpose:
         for j in i:
             if j not in ('1','2','3','4','5','6','7','8','9'):
-                return False
-    print(transpose)            
+                return False           
 
 def main():
     '''
