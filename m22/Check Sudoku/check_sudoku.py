@@ -22,12 +22,12 @@ def check_sudoku(sudoku):
     transpose = copy.deepcopy(sudoku)        
     for i in range(0,len(sudoku),1):
         for j in range(len(sudoku[0])):
-            transpose[i][j] = sudoku[j][i]    
+            transpose[i][j] = int(sudoku[j][i])    
     for i in transpose:
         for j in i:
             if j not in ('1','2','3','4','5','6','7','8','9'):
                 return False
-
+    print(transpose)            
 
 def main():
     '''
