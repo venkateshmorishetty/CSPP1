@@ -13,20 +13,30 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
+    sum1 =0
     for i in sudoku:
         for j in i:
-            if j not in ('1','2','3','4','5','6','7','8','9'):
-                return False
+            sum1 += int(j)
+    if sum1!=45:
+        return False        
             
                
     transpose = copy.deepcopy(sudoku)        
     for i in range(0,len(sudoku),1):
         for j in range(len(sudoku[0])):
-            transpose[i][j] = int(sudoku[j][i])    
+            transpose[i][j] = int(sudoku[j][i])
+    sum2 = 0            
     for i in transpose:
         for j in i:
-            if j not in ('1','2','3','4','5','6','7','8','9'):
-                return False           
+            sum2 += int(j)
+    if sum2 != 45:
+        return False        
+    list1 = []             
+    for i in range(0,len(sudoku),1):
+        for j in range(len(sudoku[0])):
+            if i in (0,1,2) and j in (0,1,2):
+                list1[i][j] = sudoku[i][j] 
+    # print(list1)                                  
 
 def main():
     '''
