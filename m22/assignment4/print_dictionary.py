@@ -5,8 +5,12 @@ the key and frequency with a SPACE - SPACE.
 '''
 
 def print_dictionary(dictionary):
-    for i in dictionary:
-    	print(i+' '+'-'+' '+str(dictionary[i]))
+    list1 = sorted(dictionary)
+    for i in list1:
+        print(i+' '+'-'+' '+str(dictionary[i]))
+
+
+        
 
 def main():
     dictionary = eval(input())
