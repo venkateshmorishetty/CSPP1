@@ -17,8 +17,10 @@ def check_sudoku(sudoku):
     for i in sudoku:
         for j in i:
             sum1 += int(j)
-    if sum1!=45:
-        return False        
+        if sum1!=45:
+            return  False
+        else:
+            sum1 = 0            
             
                
     transpose = copy.deepcopy(sudoku)        
@@ -29,14 +31,16 @@ def check_sudoku(sudoku):
     for i in transpose:
         for j in i:
             sum2 += int(j)
-    if sum2 != 45:
-        return False        
-    list1 = []             
-    for i in range(0,len(sudoku),1):
-        for j in range(len(sudoku[0])):
-            if i in (0,1,2) and j in (0,1,2):
-                list1[i][j] = sudoku[i][j] 
-    # print(list1)                                  
+        if sum2 != 45:
+            return False
+        else:
+            sum2 = 0     
+    sum3 = 0                   
+    for i in range(0,3,1):
+        for j in range(0,3,1):
+            print(sudoku[i][j])
+            sum3 += int(sudoku[i][j])
+    print(sum3)                                          
 
 def main():
     '''
