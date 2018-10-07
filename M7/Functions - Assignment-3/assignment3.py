@@ -11,9 +11,9 @@ def payingdebtoffinayear(balance, annualinterestrate):
     bal = balance
     monthlyinterestrate = annualinterestrate / 12.0
     mlb = balance / 12
-    mub = (balance * ((1.0 + monthlyinterestrate) ** 12)) / 12.0
+    mub = (balance * ((1 + monthlyinterestrate) ** 12)) / 12.0
     mid = (mlb + mub) / 2.0
-    epsilon = 0.03
+    epsilon = 0.0001
     month = 0
     while abs(balance) >= epsilon:
         balance = bal
