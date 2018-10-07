@@ -1,7 +1,7 @@
 '''Functions - Assignment-3 - Using Bisection Search to Make the Program Faster'''
 def cal(month, balance, mid, monthlyinterestrate):
     '''caluclate mid for each year'''
-    while month < 12:
+    while month <= 12:
         monthlyunpaidbalance = balance - mid
         balance = monthlyunpaidbalance + (monthlyinterestrate * monthlyunpaidbalance)
         month += 1
