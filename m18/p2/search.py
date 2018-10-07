@@ -39,11 +39,11 @@ def search(search_index, query):
     '''
     set1 = []
     adic = search_index
-    m = query.split(" ")
-    v = []
-    for i in m:
-        v.append(i.lower())
-    for i in v:
+    middle = query.split(" ")
+    temp = []
+    for i in middle:
+        temp.append(i.lower())
+    for i in temp:
         if i  in adic:
             set1.append(adic[i])
     new = []
