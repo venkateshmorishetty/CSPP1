@@ -9,17 +9,15 @@ def cal(month, balance, mid, monthlyinterestrate):
 def payingdebtoffinayear(balance, annualinterestrate):
     '''returns mid'''
     bal = balance
+    approx = 0.03
     monthlyinterestrate = annualinterestrate / 12.0
     mlb = balance / 12
     mub = (balance * (1 + monthlyinterestrate) ** 12) / 12.0
     mid = (mlb + mub) / 2.0
     epsilon = 0.0001
     month = 0
-    while abs(balance) >= epsilon:
-        balance = bal
-        month = 0
-        balance = cal(month, balance, mid, monthlyinterestrate)
-        if balance > 0:
+    while abs(cal(month, balance, mid, monthlyinterestrate)) >= approx:
+        if approx  < cal(month, balance, mid, monthlyinterestrate):
             mlb = mid
         else:
             mub = mid
