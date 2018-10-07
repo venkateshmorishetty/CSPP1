@@ -20,19 +20,22 @@ def main():
     string = input()
     count = len(string)
     i = 0
-    j = 0
-    t1 = 0
-    t2 = 0
-    while i < count-1:
-        if string[i] <= string[i+1]:
-            t1 += 1
-            if t1 > t2:
-                t2 = t1
-                j = i+1
+    string2 = ''
+    string1 = ''
+    while i <= count-2:
+        if i == count-1:
+            if string[i] > string[i-1]:
+                string1 += string[i]
+        elif string[i] <= string[i+1]:
+            string1 += string[i]
+        else:
+            string1 += string[i]
+            if len(string2) <= len(string1):
+                string2 = string1
+                string1 = ''
             else:
-                t1 = 0
-            i += 1
-    string1 = j-t2
-    print(string1[string:j+1])
+                string1 = ''
+        i = i+1
+    print(string2)
 if __name__ == "__main__":
     main()
