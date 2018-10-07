@@ -17,7 +17,7 @@ If you have time, come back to this problem after you've had a break and cleared
 
 def main():
     '''it prints longest sequence'''
-    string = input("enter string")
+    string = input()
     count = len(string)
     i = 0
     string2 = ''

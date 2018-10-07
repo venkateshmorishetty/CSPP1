@@ -11,7 +11,7 @@ def print_dictionary(dictionary):
         print(i+' '+'-'+' '+str(dictionary[i]))
 def main():
     '''main'''
-    dictionary = input()
+    dictionary = eval(input())
     print_dictionary(dictionary)
 if __name__ == '__main__':
     main()
