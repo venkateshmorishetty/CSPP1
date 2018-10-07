@@ -24,7 +24,7 @@ def payingdebtoffinayear(balance, annualinterestrate):
         else:
             mub = mid
         mid = (mlb + mub) / 2.0
-    return str(round(mid, 3))
+    return str(round(mid, 2))
 def main():
     '''Using Bisection Search to Make the Program Faster'''
     data = input()
