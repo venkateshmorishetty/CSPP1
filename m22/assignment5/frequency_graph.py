@@ -9,7 +9,7 @@ def frequency_graph(dictionary):
     for key in keys:
         count = dictionary[key]
         value = ''
-        for i in range(0, count, 1):
+        for _ in range(0, count, 1):
             value += '#'
         print(key+' '+'-'+' '+value)
 
